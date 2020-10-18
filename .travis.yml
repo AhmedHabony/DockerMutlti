@@ -1,13 +1,13 @@
+language: generic
+sudo: required
 services:
   - docker
-language: generic
-
 before_install:
   - docker build -t habony/react-test -f ./client/Dockerfile.dev ./client
 
 
 script:
-  - docker run -e CI=true habony/react-test npm test
+  - docker run -e CI=true habony/react-test npm run test
 
 after_succes:
   - docker build -t habony/multi-client ./client
