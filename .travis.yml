@@ -15,8 +15,8 @@ after_succes:
   - docker build -t habony/multi-server ./server
   - docker build -t habony/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push habony/multi-client
   - docker push habony/multi-nginx
   - docker push habony/multi-server
   - docker push habony/multi-worker
-  - docker push habony/multi-client
 
