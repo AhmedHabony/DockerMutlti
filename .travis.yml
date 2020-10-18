@@ -1,0 +1,21 @@
+services:
+  - docker
+language: generic
+
+before_install:
+  - docker build -t habony/react-test -f ./client/Dockerfile.dev ./client
+
+
+script:
+  - docker run -e CI=true habony/react-test npm test
+
+after_succes:
+  - docker build -t habony/multi-client ./client
+  - docker build -t habony/multi-nginx ./nginx
+  - docker build -t habony/multi-server ./server
+  - docker build -t habony/multi-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push habony/multi-client
+  - docker push habony/multi-nginx
+  - docker push habony/multi-server
+  - docker push habony/multi-worker
