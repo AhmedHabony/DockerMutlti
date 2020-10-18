@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/client" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/client/react/Recipe" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/client/react/Recipe/node_modules/.cache/gh-pages/github.com!AhmedHabony!Feed-Me.git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/client/react/hooks" vcs="Git" />
   </component>
 </project>
