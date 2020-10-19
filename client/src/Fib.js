@@ -39,7 +39,7 @@ class Fib extends Component {
   };
 
   renderSeenIndexes() {
-    if (this.state.seenIndexes) return this.state.seenIndexes.map(({ number }) => number).join(', ');
+    if (this.state.seenIndexes.length > 1) return this.state.seenIndexes.map(({ number }) => number).join(', ');
     else return 'No Data'
   }
 
