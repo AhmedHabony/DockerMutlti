@@ -21,6 +21,7 @@ after_succes:
   - docker push habony/multi-worker
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: us-east-2
   app: multi-Docker
@@ -29,6 +30,5 @@ deploy:
   bucket_path: docker-multi
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_KEY
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
